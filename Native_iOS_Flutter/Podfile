@@ -1,0 +1,14 @@
+platform :ios, '9.0'
+
+target 'Native_iOS_Flutter' do
+  use_frameworks!
+  
+end
+
+## ====== FLUTTER SETUP ===== ##
+# Whenever you change the Flutter plugin dependencies in some/path/my_flutter/pubspec.yaml,
+# you need to run `flutter packages get` from some/path/my_flutter to refresh the list of plugins read by the podhelper.rb script.
+# Then run pod install again from some/path/MyApp
+flutter_application_path = '../flutter_module/'
+eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
+## ========================= ##
